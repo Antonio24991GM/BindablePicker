@@ -10,8 +10,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\EnumerableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SamplePickerVM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\MenuPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\SamplePickerXAML.xaml.cs">
+      <DependentUpon>SamplePickerXAML.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SamplePickerCodeBehind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\UserControls\BindablePicker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)GettingStarted.Xamarin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\SamplePickerXAML.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
